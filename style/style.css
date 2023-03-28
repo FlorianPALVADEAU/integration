@@ -1,0 +1,275 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: white;
+  font-family: "Open Sans", sans-serif;
+}
+body header {
+  width: 100%;
+  height: 640px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: row-reverse;
+}
+body header .rightNav {
+  height: 100%;
+  width: 65%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-image: url(../assets/header_photo.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+body header .rightNav .currentWork {
+  width: 150px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 3%;
+  right: 3%;
+  z-index: 10;
+  background-color: #d51125;
+  color: white;
+}
+body header .rightNav .delivery {
+  width: 300px;
+  height: 45px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  position: absolute;
+  top: 60%;
+  right: 47%;
+  color: white;
+  background-color: #145a97;
+  font-size: 18px;
+}
+body header .leftNav {
+  width: 27%;
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  flex-direction: column;
+}
+body header .leftNav .logo {
+  margin-bottom: 7%;
+}
+body header .leftNav .location {
+  height: 17%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-direction: column;
+}
+body header .leftNav .location h1 {
+  font-size: 48px;
+  color: #002a5c;
+}
+body header .leftNav .location .details {
+  color: #d51125;
+  font-size: 16px;
+  width: 50%;
+  padding: 5px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: rgb(248, 248, 248);
+  border-top-left-radius: 50px;
+  border-top-right-radius: 50px;
+  border-bottom-right-radius: 50px;
+  border-bottom-left-radius: 50px;
+  font-weight: bold;
+}
+body header .leftNav .quickDescription {
+  width: 100%;
+  height: 30%;
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  flex-direction: column;
+}
+body header .leftNav .quickDescription h2 {
+  color: #002a5c;
+  font-size: 32px;
+  font-weight: 600;
+}
+body header .leftNav .quickDescription .price {
+  margin-top: -5%;
+  width: 45%;
+  height: 45%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: #d51125;
+  color: white;
+  box-shadow: 10px 12px white, 10px 12px 0 2px #145a97;
+}
+body header .leftNav .quickDescription .price .from {
+  width: 85%;
+  display: flex;
+  justify-content: flex-start;
+  font-size: 11px;
+}
+body header .leftNav .quickDescription .price .priceInfo {
+  width: 85%;
+  display: flex;
+  justify-content: flex-start;
+  font-size: 38px;
+  font-weight: bold;
+}
+body main {
+  margin-top: 10vh;
+  width: 84vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+}
+body main .mainContent {
+  width: 60%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+}
+body main .mainContent h3 {
+  font-size: 36px;
+  color: #002a5c;
+}
+body main .mainContent .checklist {
+  margin-top: 5vh;
+  margin-bottom: 5vh;
+  width: 100%;
+  height: 10vh;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  flex-direction: column;
+  color: #145a97;
+  margin-left: 2vw;
+}
+body main .mainContent .checklist li {
+  width: 50%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  text-align: left;
+  font-size: 22px;
+}
+body main .mainContent .checklist li img {
+  margin-right: 1vw;
+}
+body main .mainContent p {
+  font-size: 22px;
+  color: #002a5c;
+}
+body main .mainContent .firstParagraph {
+  margin-bottom: 3vh;
+}
+body main .mainContent .photo {
+  margin-top: 10vh;
+  margin-bottom: 10vh;
+  width: 70%;
+  height: 40vh;
+  background-image: url(../assets/appartment_photo.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  transition: 0.2s ease-in-out;
+  cursor: pointer;
+  box-shadow: 25px 25px 0px #002a5c;
+}
+body main .formContainer {
+  width: 25%;
+  height: 60vh;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+  background-color: #145a97;
+}
+body main .formContainer h4 {
+  font-size: 28px;
+  color: white;
+  width: 19ch;
+  text-align: center;
+}
+body main .formContainer .form {
+  width: 90%;
+  height: 75%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+body main .formContainer .form .input {
+  width: 100%;
+  height: 40px;
+  margin-bottom: 3%;
+}
+body main .formContainer .form .input:focus {
+  outline: none;
+}
+body main .formContainer .form input[type=radio] {
+  accent-color: #d51125;
+}
+body main .formContainer .form .gender, body main .formContainer .form .type {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+body main .formContainer .form .gender .choice1, body main .formContainer .form .gender .choice2, body main .formContainer .form .type .choice1, body main .formContainer .form .type .choice2 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row-reverse;
+}
+body main .formContainer .form .doubleInput {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+body main .formContainer .form .doubleInput input {
+  width: 49%;
+}
+body main .formContainer .form textarea {
+  width: 100%;
+  height: 15%;
+}
+body main .formContainer .form textarea:focus {
+  outline: none;
+}
+body footer {
+  width: 100vw;
+  height: 15vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body footer h5 {
+  width: 84vw;
+  font-size: 12px;
+  color: #002a5c;
+  font-weight: 300;
+}
+
+/*# sourceMappingURL=style.css.map */
