@@ -3,6 +3,28 @@ $red: #d51125;
 $blue: #145a97;
 $darkblue: #002a5c;
 
+
+@keyframes wiggle {
+    0%, 20%{
+        transform: rotate(15deg) translateX(2px);
+    }
+    20%, 35%{
+        transform: rotate(-15deg) translateX(-2px);
+
+    }
+    35%, 55%{
+        transform: rotate(15deg) translateX(2px);
+
+    }
+    55%, 70%{
+        transform: rotate(-15deg) translateX(-2px);
+
+    }
+    70%, 100%{
+        transform: rotate(0deg) translateX(0px);
+    }
+}
+
 * {
   padding: 0;
   margin: 0;
@@ -15,12 +37,19 @@ body {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  overflow-x: hidden;
   background-color: white;
   font-family: 'Open Sans', sans-serif;
 
+  ::selection {
+    color: $red;
+    background: rgb(248, 248, 248);
+    ;
+  }
+
   header{
     width: 100%;
-    height: 640px;
+    height: 70vh;
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -29,15 +58,13 @@ body {
         height: 100%;
         width: 65%;
         display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-end;
         background-image: url(../assets/header_photo.png);
         background-size: cover;
         background-repeat: no-repeat;
+        background-position: center;
         .currentWork{
-            width: 150px;
-            height: 30px;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -45,24 +72,33 @@ body {
             top: 3%;
             right: 3%;
             z-index: 10;
+            padding-left: 15px;
+            padding-right: 15px;
+            padding-top: 7px;
+            padding-bottom: 7px;
             background-color: $red;
             color: white;
+            font-size: 14px;
+            font-weight: 600;
+            
         }
         .delivery{
-            width: 300px;
+            width: 320px;
             height: 45px;
             display: flex;
             justify-content: space-evenly;
             align-items: center;
-            position: absolute;
-            top: 60%;
-            right: 47%;
+            position: relative;
+            bottom: 1vh;
+            left: 0.6vw;
             color: white;
             background-color: $blue;
             font-size: 18px;
-            .icon_delivery{
-                
-            }
+            padding-left: 5px;
+            padding-right: 5px;
+            font-weight: 600;
+            
+
         }
     }
     .leftNav{
@@ -76,7 +112,7 @@ body {
             margin-bottom: 7%;
         }
         .location{
-            height: 17%;
+            height: 19%;
             width: 100%;
             display: flex;
             justify-content: space-between;
@@ -84,13 +120,17 @@ body {
             flex-direction: column;
             h1{
                 font-size: 48px;
-                color: $darkblue
+                color: $darkblue;
+                font-weight: 600;
             }
             .details{
+                text-decoration: none;
                 color: $red;
                 font-size: 16px;
                 width: 50%;
                 padding: 5px;
+                padding-top: 10px;
+                padding-bottom: 10px;
                 display: flex;
                 justify-content: space-around;
                 align-items: center;
@@ -100,6 +140,16 @@ body {
                 border-bottom-right-radius: 50px;
                 border-bottom-left-radius: 50px;
                 font-weight: bold;
+                cursor: pointer;
+                img{
+                    margin-right: -10%;
+                }
+
+                &:hover{
+                    img{
+                        animation: wiggle 1s ease-in-out infinite;
+                    }
+                }
             }
         }
         .quickDescription{
@@ -109,6 +159,8 @@ body {
             justify-content: space-around;
             align-items: flex-start;
             flex-direction: column;
+            cursor: pointer;
+
             h2{
                 color: $darkblue;
                 font-size: 32px;
@@ -116,7 +168,7 @@ body {
             }
             .price{
                 margin-top: -5%;
-                width: 45%;
+                width: 55%;
                 height: 45%;
                 display: flex;
                 justify-content: center;
@@ -125,6 +177,9 @@ body {
                 background-color: $red;
                 color: white;
                 box-shadow: 10px 12px white, 10px 12px 0 2px $blue;
+                transition: 0.2s ease-in-out;
+                position: relative;
+                overflow: hidden;
                 .from{
                     width: 85%;
                     display: flex;
@@ -137,6 +192,23 @@ body {
                     justify-content: flex-start;
                     font-size: 38px;
                     font-weight: bold;
+                }
+                ::before{
+                    content: "";
+                    height: 160%;
+                    width: 50px;
+                    background: rgba(255,255,255,.3);
+                    position: absolute;
+                    top: -20px;
+                    transform: translateX(-200px) rotate(20deg);
+                    transition: all .5s;
+                }
+                &:hover{
+                    box-shadow: 7px 9px white, 7px 9px 0 2px $blue;
+                    background-color: #d84857;
+                    ::before{
+                        transform: translateX(300px) rotate(20deg);
+                    }
                 }
             }
         }
@@ -202,83 +274,175 @@ body {
             transition: 0.2s ease-in-out;
             cursor: pointer;
             box-shadow: 25px 25px 0px $darkblue;
+
+            &:hover{
+                box-shadow: 15px 15px 0px $darkblue;
+            }
         }
     }
     .formContainer{
-        width: 25%;
-        height: 60vh;
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-        flex-direction: column;
-        background-color: $blue;
-        h4{
-            font-size: 28px;
-            color: white;
-            width: 19ch;
-            text-align: center;
-        }
-        .form{
-            width: 90%;
-            height: 75%;
+        width: 27.5%;
+        height: 130vh;
+        margin-top: -30vh;
+        .container{
+            position: sticky;
+            top: 10vh;
+            width: 100%;
+            height: 73vh;
             display: flex;
-            justify-content: center;
-            flex-direction: column;
+            justify-content: space-evenly;
             align-items: center;
-            .input{
-                width: 100%;
-                height: 40px;
-                margin-bottom: 3%;
-                &:focus{
-                    outline: none;
-                }
+            flex-direction: column;
+            background-color: $blue;
+            h4{
+                font-size: 28px;
+                color: white;
+                width: 19ch;
+                text-align: center;
             }
-            input[type=radio]{
-                accent-color: $red;
-            }
-            .gender, .type{
-                width: 100%;
+            .form{
+                width: 80%;
+                height: 80%;
                 display: flex;
-                justify-content: space-evenly;
+                justify-content: space-between;
+                flex-direction: column;
                 align-items: center;
-                .choice1, .choice2{
+                .input{
+                    width: 100%;
+                    height: 40px;
+                    margin-bottom: -2%;
+                    padding-left: 10px;
+                    color: $blue;
+                    font-size: 16px;
+                    color: $blue;
+                    font-weight: bold;
+                    &:focus{
+                        outline: none;
+                    }
+                }
+                input[type=radio]{
+                    accent-color: $red;
+                    transform: scale(1.3);
+                    margin-right: 10%;
+                }
+                .gender, .type{
+                    width: 100%;
+                    display: flex;
+                    justify-content: space-around;
+                    align-items: center;
+                    .choice1, .choice2{
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        flex-direction: row-reverse;
+                    }
+                    .title, label{
+                        color: white;
+                    }
+                }
+                .doubleInput{
+                    width: 100%;
                     display: flex;
                     justify-content: space-between;
                     align-items: center;
-                    flex-direction: row-reverse;
+                    input{
+                        width: 47%;
+                    }
                 }
-                label{
-
+    
+                .type{
+                    margin-top: 1%;
+                    .choice3, .choice4{
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        flex-direction: row-reverse;
+                    }
                 }
-                input{
+                .customMessage{
+                    width: 100%;
+                    height: 15%;
+                    padding: 10px;
+                    font-family: 'Open Sans', sans-serif;
+                    font-size: 16px;
+                    color: $blue;
+                    &:focus{
+                        outline: none;
+                    }
+                }
+                .termsAndConditions{
+                    width: 100%;
+                    height: 5%;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    margin-top: -2%;
+                    margin-bottom: 7%;
+                    .acceptTerms{
+        
+                    }
+                    p{
+                        width: 93%;
+                        height: 100%;
+                        text-align: left;
+                        font-size: 10px;
+                        color: white;
+                        a{
+                            color: white;
+                        }
+                    }
+                }
+                .submit{
+                    width: 100%;
+                    height: 45px;
+                    background-color: $red;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    border: 0;
+                    cursor: pointer;
+                    position: relative;
+                    overflow: hidden;
+                    img{
+                        margin-right: 5%;
+                        height: 70%;
+                        width: auto;
+                    }
+                    p{
+                        color: white;
+                        font-size: 18px;
+                    }
+                    &:focus{
+                        background-color: #d83243;
+                        outline: none;
+                    }
 
+                    ::before{
+                        content: "";
+                        height: 160%;
+                        width: 40px;
+                        background: rgba(255,255,255,.3);
+                        position: absolute;
+                        top: -20px;
+                        transform: translateX(-150px) rotate(20deg);
+                        transition: all .5s;
+                    }
+                    &:hover{
+                        ::before{
+                            transform: translateX(300px) rotate(20deg);
+                        }
+                    }
+    
+                }
+                .fieldsRequired{
+                    position: relative;
+                    bottom: 1%;
+                    left: -25%;
+                    font-size: 12px;
+                    color: white;
                 }
             }
-            .doubleInput{
-                width: 100%;
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                input{
-                    width: 49%;
-                }
-            }
-            textarea{
-                width: 100%;
-                height: 15%;
-                &:focus{
-                    outline: none;
-                }
-            }
-            .acceptTerms{
 
-            }
-            .submitButton{
-
-            }
-            p{
-
-            }
         }
     }
   }

@@ -8,28 +8,44 @@
     <title>Promogim</title>
 </head>
 <body>
+
     <header>
+
         <div class="rightNav">
-            <p class="currentWork">Travaux en cours</p>
+
+            <p class="currentWork">TRAVAUX EN COURS</p>
             <p class="delivery"><img class="icon_delivery" src="../assets/icon_delivery.png" alt="icône livraison">Livraison 2ème trimestre 2022</p>
+           
         </div>
         <div class="leftNav">
+
             <img class="logo" src="../assets/logo.png" alt="photo des lieux en travaux">
             <div class="location">
+                
                 <h1>Villemomble (93)</h1>
-                <p class="details"><img class="icon_marker" src="../assets/icon_marker.png" alt="icône location"> 85, Boulevard d'Aulnay</p>
+                <a href="https://goo.gl/maps/YuXWR6kKs1vNkFnM8" target="_blank" class="details"><img class="icon_marker" src="../assets/icon_marker.png" alt="icône location"> 85, Boulevard d'Aulnay</a>
+                
             </div>
             <div class="quickDescription">
+
                 <h2>Du studio au 4 pièces</h2>
                 <div class="price">
+
                     <p class="from">à partir de</p>
                     <p class="priceInfo">XXX€/mois*</p>
+
                 </div>
+
             </div>
+
         </div>
+
     </header>
+
     <main>
+
         <div class="mainContent">
+
             <h3>Villa Coquetiers : Un emplacement tranquille, pratique et accessible à 300m* du tramway</h3>
             <ul class="checklist">
                 <li><img src="./assets/icon_check.png" alt="icône check"> A 300m du tram</li>
@@ -47,50 +63,69 @@
                 une terrasse ou une loggia.
             </p>
             <div class="photo"></div>
+
         </div>
+
         <aside class="formContainer">
-            <h4>Devenez propriétaire à Villemomble</h4>
-            <form action="" class="form">
-                <div class="gender">
-                    <p class="title">Civilité*</p>
-                    <div class="choice1">
-                        <label for="woman">Madame</label>
-                        <input type="radio" name="woman" value="woman">
+
+            <div class="container">
+
+                <h4>Devenez propriétaire à Villemomble</h4>
+
+                <form action="" class="form">
+                    <div class="gender">
+                        <p class="title">Civilité*</p>
+                        <div class="choice1">
+                            <label for="woman">Madame</label>
+                            <input type="radio" name="woman" value="woman">
+                        </div>
+                        <div class="choice2">
+                            <label for="man">Monsieur</label>
+                            <input type="radio" name="man" value="man">
+                        </div>
                     </div>
-                    <div class="choice2">
-                        <label for="man">Monsieur</label>
-                        <input type="radio" name="man" value="man">
+                    <input class="input" type="text" name="FirstName" placeholder="Nom*">
+                    <input class="input" type="text" name="LastName" placeholder="Prénom*">
+                    <div class="doubleInput">
+                        <input class="input" type="tel" name="PhoneNumber" placeholder="Téléphone*">
+                        <input class="input" type="number" step="10" name="PostalCode" placeholder="Code postal*">
                     </div>
-                </div>
-                <input class="input" type="text" name="FirstName" placeholder="Nom*">
-                <input class="input" type="text" name="LastName" placeholder="Prénom*">
-                <div class="doubleInput">
-                    <input class="input" type="tel" name="PhoneNumber" placeholder="Téléphone*">
-                    <input class="input" type="number" name="PostalCode" placeholder="Code postal*">
-                </div>
-                <input class="input" type="email" name="LastName" placeholder="E-mail*">
-                <div class="type">
-                    <p class="title">Je souhaite*</p>
-                    <div class="choice1">
-                        <label for="live">Habiter</label>
-                        <input type="radio" name="live" value="live">
+                    <input class="input" type="email" name="LastName" placeholder="E-mail*">
+                    <div class="type">
+                        <p class="title">Je souhaite*</p>
+                        <div class="choice3">
+                            <label for="live">Habiter</label>
+                            <input type="radio" name="live" value="live">
+                        </div>
+                        <div class="choice4">
+                            <label for="invest">Investir</label>
+                            <input type="radio" name="invest" value="invest">
+                        </div>
                     </div>
-                    <div class="choice1">
-                        <label for="invest">Investir</label>
-                        <input type="radio" name="invest" value="invest">
+                    <textarea class="customMessage" name="customMessage" placeholder="Votre message"></textarea>
+                    <div class="termsAndConditions">
+                        <input class="acceptTerms" type="checkbox" required value="termsAccepted">
+                        <p>En cochant cette case, je consens à recevoir des offres commerciales et des informations sur les produits et services de Promogim - <a href="#">Mention sur la protection des données personnelles</a></p>
                     </div>
-                </div>
-                <textarea class="customMessage" name="customMessage" placeholder="Votre message"></textarea>
-                <input class="acceptTerms" type="checkbox" required value="termsAccepted">
-                <input class="submitButton" type="submit" value="submit">
-                <p>*Champs obligatoires</p>
-            </form>
+                    <button class="submit">
+                        <img src="./assets/icon_arrow.png" alt="icône flèche">
+                        <p>ENVOYER MON MESSAGE</p>
+                    </button>
+                    <p class="fieldsRequired">*Champs obligatoires</p>
+                </form>
+
+            </div>
+
         </aside>
     </main>
+
     <footer>
+
         <h5>
             Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Nullam id dolor id nibh ultricies vehicula ut id elit. Maecenas faucibus mollis interdum. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras mattis consectetur purus sit amet fermentum. Nullam quis risus eget urna mollis ornare vel eu leo. Maecenas sed diam eget risus varius blandit sit amet non magna. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Donec sed odio dui. Sed posuere consectetur est at lobortis. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Nullam id dolor id nibh ultricies vehicula ut id elit. Maecenas faucibus mollis interdum. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras mattis consectetur purus sit amet fermentum. Nullam quis risus eget urna mollis ornare vel eu leo. Maecenas sed diam eget risus varius blandit sit amet non magna. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Donec sed odio dui. Sed posuere consectetur est at lobortis.
         </h5>
+        
     </footer>
+
 </body>
 </html>
